@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+App.controller('UserController',['$scope','UserService',function($scope,UserService){
+	var self=this;
+	self.user={id:null,username:'',address:'',email:''};
+	self.users=[];
+	
+	self.fetchAllUsers=function(){
+		UserService.fetchAllUsers().then(
+				function(d){
+					self.users=d;
+				},
+				function(errResponse){
+					console.error("获取用户信息出错！");
+				}
+		);
+	};
+	self.createUser=function(user){
+		UserService.createUser(user).then(
+			self.fetchAllUsers,
+			function(errResponse){
+				console.error("创建用户信息出错！");
+			}			
+		);
+	};
+	self.updateUser=function(user,id){
+		UserService.updateUser(user,id).then(
+				self.fetchAllUsers,
+				function(errResponse){
+					console.error("更新用户信息出错！");
+				}	
+		);
+	};
+	self.deleteUser=function(id){
+		UserService.deleteUser(id).then(
+				self.fetchAllUsers,
+				function(errResponse){
+					console.error("删除用户信息出错！");
+				}
+		);
+	};
+	
+	self.submit=function(){
+		if(self.user.id===null){
+			console.log('保存新用户',self.user);
+			self.createUser(self.user);
+		}else{
+			self.updateUser(self.user,self.user.id);
+			console.log('更新用户信息',self.user);
+		};
+		self.reset();
+		
+	};
+	self.edit=function(id){
+		for(var i=0;i<self.users.length;i++){
+			if(self.users[i].id==id){
+				self.user=angular.copy(self.users[i]);
+				break;
+			}
+		}
+	};
+	self.remove=function(id){
+		if(self.user.id==id){
+			self.reset();
+		};
+		self.deleteUser(id);
+	};
+	self.reset=function(){
+		self.user={id:null,username:'',address:'',email:''};
+        $scope.myForm.$setPristine(); //reset Form
+	}
+}])
