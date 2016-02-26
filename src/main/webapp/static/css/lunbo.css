@@ -1,0 +1,662 @@
+
+@font-face {
+    font-style: normal;
+    font-weight: normal;
+}
+.csslider1 {
+    display: inline-block;
+    margin-top: 10px;
+    max-width: 833px;
+    position: relative;
+    width: 100%;
+}
+.csslider1 > .cs_anchor {
+    display: none;
+}
+.csslider1 > ul {
+    font-size: 0;
+    line-height: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+}
+.csslider1 > ul > li.img img {
+    width: 100%;
+}
+.csslider1 > ul > li.img {
+    -moz-user-select: none;
+    font-size: 0;
+}
+.csslider1 > ul > li {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: initial;
+    height: 100%;
+    line-height: normal;
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0px, 0px, 0px);
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+}
+.csslider1 .cs_lnk {
+    font-size: 0;
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    top: -9999px;
+}
+.csslider1 > .cs_arrowprev, .csslider1 > .cs_arrownext {
+    -moz-user-select: none;
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+}
+.csslider1 > .cs_arrowprev > label, .csslider1 > .cs_arrownext > label {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    text-decoration: none;
+    z-index: -1;
+}
+.csslider1 > .cs_arrowprev {
+    left: 0;
+}
+.csslider1 > .cs_arrownext {
+    right: 0;
+}
+.csslider1 > .cs_arrowprev > label.num2, .csslider1 > .cs_arrownext > label.num1 {
+    opacity: 1;
+    z-index: 5;
+}
+.csslider1 > .slide:checked ~ .cs_arrowprev > label, .csslider1 > .slide:checked ~ .cs_arrownext > label {
+    opacity: 0;
+    z-index: -1;
+}
+.csslider1 > #cs_slide1_0:checked ~ .cs_arrowprev > label.num2, .csslider1 > #cs_slide1_0:checked ~ .cs_arrownext > label.num1, .csslider1 > #cs_slide1_1:checked ~ .cs_arrowprev > label.num0, .csslider1 > #cs_slide1_1:checked ~ .cs_arrownext > label.num2, .csslider1 > #cs_slide1_2:checked ~ .cs_arrowprev > label.num1, .csslider1 > #cs_slide1_2:checked ~ .cs_arrownext > label.num0 {
+    opacity: 1;
+    z-index: 5;
+}
+@keyframes arrow {
+0%, 33.3233% {
+    opacity: 1;
+    z-index: 5;
+}
+33.3333%, 100% {
+    opacity: 0;
+    z-index: -1;
+}
+}
+@keyframes arrow {
+0%, 33.3233% {
+    opacity: 1;
+    z-index: 5;
+}
+33.3333%, 100% {
+    opacity: 0;
+    z-index: -1;
+}
+}
+.csslider1 > #cs_play1:checked ~ .cs_arrowprev > label.num2, .csslider1 > #cs_play1:checked ~ .cs_arrownext > label.num1, .csslider1 > #cs_pause1:checked ~ .cs_arrowprev > label.num2, .csslider1 > #cs_pause1:checked ~ .cs_arrownext > label.num1 {
+    animation: 12000ms ease -2000ms normal none infinite running arrow;
+}
+.csslider1 > #cs_play1:checked ~ .cs_arrowprev > label.num0, .csslider1 > #cs_play1:checked ~ .cs_arrownext > label.num2, .csslider1 > #cs_pause1:checked ~ .cs_arrowprev > label.num0, .csslider1 > #cs_pause1:checked ~ .cs_arrownext > label.num2 {
+    animation: 12000ms ease 2000ms normal none infinite running arrow;
+}
+.csslider1 > #cs_play1:checked ~ .cs_arrowprev > label.num1, .csslider1 > #cs_play1:checked ~ .cs_arrownext > label.num0, .csslider1 > #cs_pause1:checked ~ .cs_arrowprev > label.num1, .csslider1 > #cs_pause1:checked ~ .cs_arrownext > label.num0 {
+    animation: 12000ms ease 6000ms normal none infinite running arrow;
+}
+.csslider1.cs_pauseHover:hover > .cs_arrowprev > label, .csslider1 > #cs_pause1:checked ~ .cs_arrowprev > label, .csslider1.cs_pauseHover:hover > .cs_arrownext > label, .csslider1 > #cs_pause1:checked ~ .cs_arrownext > label {
+    animation-play-state: paused !important;
+}
+.csslider1 > .slide:checked ~ .cs_arrowprev > label, .csslider1 > .slide:checked ~ .cs_arrownext > label {
+    animation: 0s ease 0s normal none 1 running none;
+}
+.csslider1 > .cs_bullets {
+    -moz-user-select: none;
+    font-size: 0;
+    left: 0;
+    line-height: 8pt;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 6;
+}
+.csslider1 > .cs_bullets > div {
+    margin-left: -50%;
+    width: 100%;
+}
+.csslider1 > .cs_bullets > label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+.csslider1 > .cs_bullets > label > .cs_thumb {
+    left: -39.5px;
+    line-height: 0;
+    opacity: 0;
+    position: absolute;
+    top: -48px;
+    visibility: hidden;
+    z-index: 1;
+}
+.csslider1 > .cs_description {
+    z-index: 3;
+}
+.csslider1 > .cs_description a, .csslider1 > .cs_description a:visited, .csslider1 > .cs_description a:active {
+    color: inherit;
+}
+.csslider1 > .cs_description a:hover {
+    text-decoration: none;
+}
+.csslider1 > .cs_description > label {
+    left: 0;
+    max-width: 50%;
+    position: absolute;
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+}
+.csslider1 > .cs_description > label > span {
+    vertical-align: top;
+}
+.csslider1 > .cs_description > label span {
+    display: inline-block;
+}
+.csslider1 > #cs_slide1_0:checked ~ ul > li.num0, .csslider1 > #cs_slide1_1:checked ~ ul > li.num1, .csslider1 > #cs_slide1_2:checked ~ ul > li.num2 {
+    opacity: 1;
+    z-index: 2;
+}
+.csslider1 > ul > li {
+    display: inline-block;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 2000ms ease 0s;
+    z-index: 1;
+}
+.csslider1 > ul > li.num0 {
+    opacity: 1;
+    z-index: 2;
+}
+.csslider1 > .slide:checked ~ ul > li.num0 {
+    opacity: 0;
+    z-index: 1;
+}
+@keyframes fade {
+0%, 50%, 100% {
+    opacity: 0;
+    z-index: 2;
+}
+16.6667%, 33.3333% {
+    opacity: 1;
+    z-index: 2;
+}
+}
+@keyframes fade {
+0%, 50%, 100% {
+    opacity: 0;
+    z-index: 2;
+}
+16.6667%, 33.3333% {
+    opacity: 1;
+    z-index: 2;
+}
+}
+.csslider1 > #cs_play1:checked ~ ul > li.num0, .csslider1 > #cs_pause1:checked ~ ul > li.num0 {
+    animation: 12000ms ease -2000ms normal none infinite running fade;
+}
+.csslider1 > #cs_play1:checked ~ ul > li.num1, .csslider1 > #cs_pause1:checked ~ ul > li.num1 {
+    animation: 12000ms ease 2000ms normal none infinite running fade;
+}
+.csslider1 > #cs_play1:checked ~ ul > li.num2, .csslider1 > #cs_pause1:checked ~ ul > li.num2 {
+    animation: 12000ms ease 6000ms normal none infinite running fade;
+}
+.csslider1 > #cs_play1:checked ~ ul > li, .csslider1 > #cs_pause1:checked ~ ul > li {
+    transition: none 0s ease 0s ;
+}
+.csslider1.cs_pauseHover:hover > ul > li, .csslider1 > #cs_pause1:checked ~ ul > li {
+    animation-play-state: paused !important;
+}
+.csslider1 > .slide:checked ~ ul > li {
+    animation: 0s ease 0s normal none 1 running none;
+}
+.csslider1 {
+    perspective: 500px;
+}
+.csslider1 > .cs_play_pause {
+    transition: opacity 0.5s ease 0s;
+}
+.csslider1 > .cs_arrowprev {
+    transform: rotateY(-90deg);
+    transition: opacity 0.5s ease 0.15s, transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+}
+.csslider1 > .cs_arrownext {
+    transform: rotateY(90deg);
+    transition: opacity 0.5s ease 0.3s, transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
+}
+.csslider1 > .cs_arrowprev, .csslider1 > .cs_arrownext, .csslider1 > .cs_play_pause {
+    opacity: 0;
+}
+.csslider1:hover > .cs_arrowprev, .csslider1:hover > .cs_arrownext, .csslider1:hover > .cs_play_pause {
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+.csslider1 > .cs_arrowprev > label, .csslider1 > .cs_arrownext > label {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    border-radius: 4px;
+    height: 70px;
+    margin-top: -35px;
+    overflow: hidden;
+    width: 40px;
+}
+.csslider1 > .cs_arrowprev {
+    left: 70px;
+}
+.csslider1 > .cs_arrownext {
+    right: 70px;
+}
+.csslider1 > .cs_arrowprev > label {
+    right: 0;
+}
+.csslider1 > .cs_arrownext > label {
+    left: 0;
+}
+.csslider1 > .cs_arrowprev > label::after {
+    content: "<";
+}
+.csslider1 > .cs_arrownext > label::after {
+    content: ">";
+}
+.csslider1 > .cs_arrowprev > label::after, .csslider1 > .cs_arrownext > label::after {
+    color: #fff;
+    display: block;
+    font: 40px/76px "demurecontrols";
+    text-align: center;
+}
+.csslider1 > .cs_arrowprev > label, .csslider1 > .cs_arrownext > label {
+    transition: width 300ms ease 0s, margin-left 300ms ease 0s, background-color 300ms ease 0s;
+}
+.csslider1 > .cs_arrowprev:hover > label {
+    background-color: #1fa5ad;
+    width: 70px;
+}
+.csslider1 > .cs_arrownext:hover > label {
+    background-color: #1fa5ad;
+    width: 70px;
+}
+.csslider1 > .cs_bullets {
+    bottom: 5px;
+    margin-bottom: 5px;
+}
+.csslider1 > .cs_bullets > label {
+    perspective: 500px;
+}
+.csslider1 > .cs_bullets > label > .cs_thumb {
+    border: 3px solid #1fa5ad;
+    margin-top: -11px;
+    transform: rotateX(90deg);
+    transform-origin: 0 100% 0;
+    transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, visibility 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+}
+.csslider1 > .cs_bullets > label > .cs_thumb::before {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #1fa5ad;
+    bottom: -8px;
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -1px;
+    position: absolute;
+    width: 0;
+}
+.csslider1 > .cs_bullets > label:hover > .cs_thumb {
+    opacity: 1;
+    transform: rotateX(0deg);
+    visibility: visible;
+}
+.csslider1 > .cs_bullets > label {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    border-radius: 50%;
+    margin: 0 6px;
+    padding: 9px;
+}
+.csslider1 > .cs_bullets > label.num0 {
+    background-color: #1fa5ad;
+}
+.csslider1 > .slide:checked ~ .cs_bullets > label {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+}
+.csslider1 > #cs_slide1_0:checked ~ .cs_bullets > label.num0, .csslider1 > #cs_slide1_1:checked ~ .cs_bullets > label.num1, .csslider1 > #cs_slide1_2:checked ~ .cs_bullets > label.num2 {
+    background-color: #1fa5ad;
+}
+.csslider1 > .cs_bullets > label:hover {
+    background-color: #1fa5ad;
+}
+@keyframes bullet {
+0%, 33.3233% {
+    background-color: #1fa5ad;
+}
+33.3333%, 100% {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+}
+}
+@keyframes bullet {
+0%, 33.3233% {
+    background-color: #1fa5ad;
+}
+33.3333%, 100% {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+}
+}
+.csslider1 > #cs_play1:checked ~ .cs_bullets > label.num0, .csslider1 > #cs_pause1:checked ~ .cs_bullets > label.num0 {
+    animation: 12000ms ease -2000ms normal none infinite running bullet;
+}
+.csslider1 > #cs_play1:checked ~ .cs_bullets > label.num1, .csslider1 > #cs_pause1:checked ~ .cs_bullets > label.num1 {
+    animation: 12000ms ease 2000ms normal none infinite running bullet;
+}
+.csslider1 > #cs_play1:checked ~ .cs_bullets > label.num2, .csslider1 > #cs_pause1:checked ~ .cs_bullets > label.num2 {
+    animation: 12000ms ease 6000ms normal none infinite running bullet;
+}
+.csslider1 > #cs_play1:checked ~ .cs_bullets > label, .csslider1 > #cs_pause1:checked ~ .cs_bullets > label {
+    transition: none 0s ease 0s ;
+}
+.csslider1.cs_pauseHover:hover > .cs_bullets > label, .csslider1 > #cs_pause1:checked ~ .cs_bullets > label {
+    animation-play-state: paused !important;
+}
+.csslider1 > .slide:checked ~ .cs_bullets > label {
+    animation: 0s ease 0s normal none 1 running none;
+}
+.csslider1 > .cs_description > label {
+    bottom: 35px;
+    font: 20px "Roboto",sans-serif;
+    left: 20px;
+    opacity: 1;
+    perspective: 500px;
+    top: auto;
+    z-index: 1;
+}
+.csslider1 > .cs_description > label > span {
+    border-radius: 4px;
+    color: #fff;
+    margin: 1px 10px;
+    overflow: hidden;
+    padding: 10px;
+    transform-origin: 0 0 0;
+}
+.csslider1 > #cs_slide1_0:checked ~ .cs_description > .num0, .csslider1 > #cs_slide1_1:checked ~ .cs_description > .num1, .csslider1 > #cs_slide1_2:checked ~ .cs_description > .num2 {
+    z-index: 2;
+}
+.csslider1 > #cs_slide1_0:checked ~ .cs_description > .num0 > .cs_descr, .csslider1 > #cs_slide1_1:checked ~ .cs_description > .num1 > .cs_descr, .csslider1 > #cs_slide1_2:checked ~ .cs_description > .num2 > .cs_descr {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transition: opacity 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1350ms, transform 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1350ms, visibility 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1350ms;
+    visibility: visible;
+}
+.csslider1 > #cs_slide1_0:checked ~ .cs_description > .num0 > .cs_title, .csslider1 > #cs_slide1_1:checked ~ .cs_description > .num1 > .cs_title, .csslider1 > #cs_slide1_2:checked ~ .cs_description > .num2 > .cs_title {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transition: opacity 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1200ms, transform 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1200ms, visibility 750ms ease 1200ms;
+    visibility: visible;
+}
+.csslider1 > #cs_slide1_0:checked ~ .cs_description > .num0 .cs_wrapper, .csslider1 > #cs_slide1_1:checked ~ .cs_description > .num1 .cs_wrapper, .csslider1 > #cs_slide1_2:checked ~ .cs_description > .num2 .cs_wrapper {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.csslider1 > .cs_description > label > .cs_title {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    margin: 0 10px;
+    opacity: 0;
+    transform: rotateX(90deg);
+    transition: opacity 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 975ms, transform 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 975ms, visibility 750ms ease 975ms;
+    visibility: hidden;
+    z-index: 2;
+}
+.csslider1 > .cs_description > label > .cs_descr {
+    background-color: #1fa5ad;
+    font-size: 0.8em;
+    margin: 1px 10px;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transition: opacity 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 750ms, transform 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 600ms, visibility 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 600ms;
+    visibility: hidden;
+    z-index: 1;
+}
+.csslider1 > .cs_description > label > .cs_title > .cs_wrapper {
+    transform: translateX(-100%);
+    transition: opacity 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1450ms, transform 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1450ms;
+}
+.csslider1 > .cs_description > label > .cs_descr > .cs_wrapper {
+    transform: translateX(100%);
+    transition: opacity 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1675ms, transform 750ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 1675ms;
+}
+@keyframes cs_descrWrapper {
+3.0625%, 37.7083% {
+    z-index: 2;
+}
+37.7183%, 100% {
+    z-index: 0;
+}
+}
+@keyframes cs_descrWrapper {
+3.0625%, 37.7083% {
+    z-index: 2;
+}
+37.7183%, 100% {
+    z-index: 0;
+}
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num0 {
+    animation: 12000ms ease -1400ms normal none infinite running cs_descrWrapper;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num1 {
+    animation: 12000ms ease 2600ms normal none infinite running cs_descrWrapper;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num2 {
+    animation: 12000ms ease 6600ms normal none infinite running cs_descrWrapper;
+}
+@keyframes cs_title {
+3.0625%, 30.2608% {
+    opacity: 1;
+    transform: rotateX(-9deg);
+    visibility: visible;
+    z-index: 2;
+}
+4.375%, 28.9483% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    visibility: visible;
+    z-index: 2;
+}
+33.3333% {
+    opacity: 0;
+    transform: rotateX(90deg);
+    visibility: hidden;
+    z-index: 2;
+}
+33.3433%, 100% {
+    z-index: 0;
+}
+}
+@keyframes cs_title {
+3.0625%, 30.2608% {
+    opacity: 1;
+    transform: rotateX(-9deg);
+    visibility: visible;
+    z-index: 2;
+}
+4.375%, 28.9483% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    visibility: visible;
+    z-index: 2;
+}
+33.3333% {
+    opacity: 0;
+    transform: rotateX(90deg);
+    visibility: hidden;
+    z-index: 2;
+}
+33.3433%, 100% {
+    z-index: 0;
+}
+}
+@keyframes cs_descr {
+6.125%, 25.8858% {
+    opacity: 1;
+    transform: rotateX(9deg);
+    visibility: visible;
+    z-index: 1;
+}
+8.75%, 24.5733% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    visibility: visible;
+    z-index: 1;
+}
+33.3333% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    visibility: hidden;
+    z-index: 1;
+}
+33.3433%, 100% {
+    z-index: 0;
+}
+}
+@keyframes cs_descr {
+6.125%, 25.8858% {
+    opacity: 1;
+    transform: rotateX(9deg);
+    visibility: visible;
+    z-index: 1;
+}
+8.75%, 24.5733% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    visibility: visible;
+    z-index: 1;
+}
+33.3333% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    visibility: hidden;
+    z-index: 1;
+}
+33.3433%, 100% {
+    z-index: 0;
+}
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num0 > .cs_title, .csslider1 > #cs_pause1:checked ~ .cs_description > .num0 > .cs_title {
+    animation: 12000ms ease -1400ms normal none infinite running cs_title;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num1 > .cs_title, .csslider1 > #cs_pause1:checked ~ .cs_description > .num1 > .cs_title {
+    animation: 12000ms ease 2600ms normal none infinite running cs_title;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num2 > .cs_title, .csslider1 > #cs_pause1:checked ~ .cs_description > .num2 > .cs_title {
+    animation: 12000ms ease 6600ms normal none infinite running cs_title;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num0 > .cs_descr, .csslider1 > #cs_pause1:checked ~ .cs_description > .num0 > .cs_descr {
+    animation: 12000ms ease -1400ms normal none infinite running cs_descr;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num1 > .cs_descr, .csslider1 > #cs_pause1:checked ~ .cs_description > .num1 > .cs_descr {
+    animation: 12000ms ease 2600ms normal none infinite running cs_descr;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num2 > .cs_descr, .csslider1 > #cs_pause1:checked ~ .cs_description > .num2 > .cs_descr {
+    animation: 12000ms ease 6600ms normal none infinite running cs_descr;
+}
+@keyframes cs_title_text {
+3.0625%, 30.2608% {
+    opacity: 1;
+    transform: translateX(-1%);
+}
+4.375%, 28.9483% {
+    opacity: 1;
+    transform: translateX(0%);
+}
+33.3333% {
+    opacity: 0;
+    transform: translateX(100%);
+}
+}
+@keyframes cs_title_text {
+3.0625%, 30.2608% {
+    opacity: 1;
+    transform: translateX(-1%);
+}
+4.375%, 28.9483% {
+    opacity: 1;
+    transform: translateX(0%);
+}
+33.3333% {
+    opacity: 0;
+    transform: translateX(100%);
+}
+}
+@keyframes cs_descr_text {
+6.125%, 25.8858% {
+    opacity: 1;
+    transform: translateX(1%);
+}
+8.75%, 24.5733% {
+    opacity: 1;
+    transform: translateX(0%);
+}
+33.3333% {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+}
+@keyframes cs_descr_text {
+6.125%, 25.8858% {
+    opacity: 1;
+    transform: translateX(1%);
+}
+8.75%, 24.5733% {
+    opacity: 1;
+    transform: translateX(0%);
+}
+33.3333% {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num0 .cs_title > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > .num0 .cs_title > .cs_wrapper {
+    animation: 12000ms ease -1190ms normal none infinite running cs_title_text;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num1 .cs_title > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > .num1 .cs_title > .cs_wrapper {
+    animation: 12000ms ease 2810ms normal none infinite running cs_title_text;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num2 .cs_title > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > .num2 .cs_title > .cs_wrapper {
+    animation: 12000ms ease 6810ms normal none infinite running cs_title_text;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num0 .cs_descr > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > .num0 .cs_descr > .cs_wrapper {
+    animation: 12000ms ease -1190ms normal none infinite running cs_descr_text;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num1 .cs_descr > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > .num1 .cs_descr > .cs_wrapper {
+    animation: 12000ms ease 2810ms normal none infinite running cs_descr_text;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > .num2 .cs_descr > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > .num2 .cs_descr > .cs_wrapper {
+    animation: 12000ms ease 6810ms normal none infinite running cs_descr_text;
+}
+.csslider1 > #cs_play1:checked ~ .cs_description > label > .cs_title, .csslider1 > #cs_play1:checked ~ .cs_description > label > .cs_descr, .csslider1 > #cs_play1:checked ~ .cs_description > label > .cs_title > .cs_wrapper, .csslider1 > #cs_play1:checked ~ .cs_description > label > .cs_descr > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_title, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_descr, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_title > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_descr > .cs_wrapper {
+    transition: none 0s ease 0s ;
+}
+.csslider1.cs_pauseHover:hover > .cs_description > label > .cs_title, .csslider1.cs_pauseHover:hover > .cs_description > label > .cs_descr, .csslider1.cs_pauseHover:hover > .cs_description > label > .cs_title > .cs_wrapper, .csslider1.cs_pauseHover:hover > .cs_description > label > .cs_descr > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_title, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_descr, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_title > .cs_wrapper, .csslider1 > #cs_pause1:checked ~ .cs_description > label > .cs_descr > .cs_wrapper {
+    animation-play-state: paused !important;
+}
+.csslider1 > .slide:checked ~ .cs_description > label {
+    animation: 0s ease 0s normal none 1 running none;
+}
+@media only screen and (max-width: 480px), not all, only screen and (max--moz-device-pixel-ratio: 2) and (max-width: 480px), not all, not all, only screen and (max-resolution: 192dpi) and (max-width: 480px), only screen and (max-resolution: 2dppx) and (max-width: 480px) {
+.csslider1 > .cs_description, .csslider1 > .cs_bullets {
+    display: none;
+}
+}

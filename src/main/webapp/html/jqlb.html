@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery宸﹀彸绠ご鎺у埗鍥剧墖杞挱浠ｇ爜 - 绔欓暱绱犳潗</title>
+<script type="text/javascript" src="../static/jsApi/jquery.js"></script>
+<style type="text/css">
+body,ul,li{padding: 0; margin: 0;}
+ul,li{list-style: none;}
+body{font-size:12px;}
+
+#demo1{ 
+    position: relative;    
+    margin: 50px auto;
+    width: 700px;     
+    border:1px solid #ccc;
+}
+#demo1 .img_list{overflow: hidden; position: relative; height: 260px;}
+/* 鏍规嵁鍥剧墖鐨勫紶鏁版潵璁惧畾ul鐨勫搴� */
+.img_list ul{ width: 3500px; position: absolute; height: 260px; left: 0px;}
+.img_list li{ float: left; width: 700px;}
+.img_list img{ margin: 1px; width: 698px; height: 258px;}
+
+/* 鍥剧墖瀵瑰簲鐨勬寜閽牱寮� */
+.btn_list ul{ position: absolute; right: 20px; bottom: 35px; }
+.btn_list li{ float: left; margin-right: 10px; color: #999; border: 1px solid #ccc; }
+.btn_list li:hover,.btn_list li.on{ cursor: pointer; border: 1px solid #E204A4;}
+.btn_list li img{ width: 30px; height: 15px; display: block;}
+/* 宸﹀彸鐐瑰嚮鐨勬寜閽牱寮� */
+#demo1 .toLeft,#demo1 .toRight{
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 30px;    
+    top: 110px;    
+    background: url(image/zbbg_24.png) no-repeat 0 -150px;
+}
+
+/* 鍥剧墖瀵瑰簲鐨勮鏄�*/
+.img_intro{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+}
+.img_intro .img_intro_bg,.img_intro .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.img_intro .img_intro_bg{
+    background: #000;    
+    opacity: .3;
+    z-index: 999;
+}
+.img_intro .text{
+    padding: 5px 10px;
+    z-index: 1000;
+    color: #999;
+}
+#demo1 .toLeft{
+    left: -40px;
+}
+#demo1 .toRight{
+    right: -40px;
+    background-position: -50px -150px;
+}
+</style>
+</head>  
+<body>   
+
+<div id="demo1">
+	<div class="img_list">
+		<ul>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="../static/images/1.jpg" alt="瀵昏姳鏁呬簨"></a></li>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="../static/images/2.jpg" alt="閲戠摱姊�"></a></li>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="../static/images/3.jpg" alt="瑙嗛鍚功"></a></li>
+			<li><a href="http://sc.chinaz.com/" target="_blank"><img src="../static/images/4.jpg" alt="鐩楀鏁呬簨"></a></li>
+		</ul>
+	</div>
+	<div class="btn_list">
+		<ul>
+		</ul>
+	</div>
+	<div class="img_intro">
+		<div class="text"><a href="#" target="_blank"></a></div>
+		<div class="img_intro_bg"></div>            
+	</div>
+	<a href="#" id="toLeft" class="link toLeft"></a>
+	<a href="#" id="toRight" class="link toRight"></a>
+</div>
+
+<script type="text/javascript">
+var index = 0;
+var timer = 0;
+var ulist = $('.img_list ul');
+var blist = $('.btn_list ul');
+var list = ulist.find('li');
+var llength = list.length;//li鐨勪釜鏁帮紝鐢ㄦ潵鍋氳竟缂樺垽鏂�
+var lwidth = $(list[0]).width();//姣忎釜li鐨勯暱搴︼紝ul姣忔绉诲姩鐨勮窛绂�
+var uwidth = llength * lwidth;//ul鐨勬€诲搴�
+
+function init(){
+	//鐢熸垚鎸夐挳(鍙互闅愯棌)
+	addBtn(list);
+	//鏄剧ず闅愯棌宸﹀彸鐐瑰嚮寮€鍏�
+	$('.link').css('display', 'block');
+	$('.link').bind('click', function(event) {
+		var elm = $(event.target);
+		doMove(elm.attr('id'));
+		return false;
+	});
+
+	//鍒濆鍖栨弿杩�
+	var text = ulist.find('li').eq(0).find('img').attr('alt');
+	var link = ulist.find('li').eq(0).find('a').attr('href');
+	$('.img_intro .text a').text(text);
+	$('.img_intro .text a').attr('href',link);
+	auto();
+}
+
+function auto(){
+	//瀹氭椂鍣�
+	timer = setInterval("doMove('toRight')",3000);
+
+	$('.img_list li, .btn_list li').hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval("doMove('toRight')",3000);
+	});
+}
+
+function changeBtn(i){
+	blist.find('li').eq(i).addClass('on').siblings().removeClass('on');
+	var text = ulist.find('li').eq(i).find('img').attr('alt');
+	var link = ulist.find('li').eq(i).find('a').attr('href');
+	$('.img_intro .text a').text(text);
+	$('.img_intro .text a').attr('href',link);
+}
+
+function addBtn (list){
+	for (var i = 0; i < list.length; i++) {
+		var imgsrc = $(list[i]).find('img').attr('src');            
+		var listCon = '<li><img src="'+imgsrc+'""></li>';         
+		$(listCon).appendTo(blist);
+		//闅愯棌button涓殑鏁板瓧
+		//list.css('text-indent', '10000px');
+	};
+	blist.find('li').first().addClass('on');
+	blist.find('li').click(function(event) {
+		var _index = $(this).index();            
+		doMove(_index);
+	});
+}
+
+function doMove(direction){
+	//鍚戝彸鎸夐挳
+	if (direction =="toRight") {
+		index++;
+		if ( index< llength) {
+			uwidth = lwidth *index;
+			ulist.css('left',-uwidth);
+			//ulist.animate({left: -uwidth}, 1000);
+
+		}else{
+			ulist.css('left','0px');
+			index = 0;
+		}; 
+	//鍚戝乏鎸夐挳           
+	}else if(direction =="toLeft"){
+		index--;
+		if ( index < 0) {
+			index = llength - 1;                
+		}
+		uwidth = lwidth *index;
+		ulist.css('left',-uwidth);
+		//ulist.animate({left: -uwidth}, "slow");    
+	//鐐瑰嚮鏁板瓧璺宠浆  
+	}else{
+		index = direction;
+		uwidth = lwidth *index;
+		ulist.css('left',-uwidth);
+	};
+	changeBtn(index);
+}
+init();
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>閫傜敤娴忚鍣細IE8銆�360銆丗ireFox銆丆hrome銆丼afari銆丱pera銆佸偛娓搞€佹悳鐙椼€佷笘鐣屼箣绐�.</p>
+<p>鏉ユ簮锛�<a href="http://sc.chinaz.com/" target="_blank">绔欓暱绱犳潗</a></p>
+</div>
+</body>
+</html>
