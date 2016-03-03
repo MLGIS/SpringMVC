@@ -1,0 +1,21 @@
+.leftnag{
+	position: relative;
+  	min-height: 1px;
+  	padding-right: 15px;
+ 	padding-left: 15px;
+ 	width:20%;
+ 	
+}
+.row{
+	margin-right: 15px;
+  	margin-left: 15px;
+  	float:left;
+}
+.center{
+	float:left;
+	position: relative;
+  	min-height: 1px;
+  	padding-right: 15px;
+ 	padding-left: 15px;
+ 	width:60%;
+}

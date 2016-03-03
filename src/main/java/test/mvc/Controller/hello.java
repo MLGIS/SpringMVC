@@ -13,6 +13,6 @@ public class hello {
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String homePage(Model model, HttpServletRequest request) {
 
-		return "index";
+		return "layout/main";
 	}
 }
