@@ -12,12 +12,12 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
-<body class="post-template page">
+<body>
 	
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="row">
-		<div class="leftnag"><jsp:include page="left.jsp"></jsp:include></div>
-		<div class="center"><jsp:include page="center.jsp"></jsp:include></div>
+		<div class="leftnag"><div class="right"><jsp:include page="left.jsp"></jsp:include></div></div>
+		<div class="center"><jsp:include page="center.jsp"></jsp:include></div><%--  --%><!-- <iframe  width="100%" style="_width: 100%;" height="600px" scrolling="auto" frameborder="0" name="main"  src="http://localhost:8080/test/html/pubuliu.html"></iframe> -->
 	</div>
 
 </body>

@@ -1,12 +1,84 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
-</body>
-</html>
+<script type="text/javascript" src="static/pubuliu/jq.js">
+
+</script>
+
+<section id="title">
+		<h2>瀑布流效果</h2>By Smile.
+	</section>
+
+	<div id="wrap">
+	
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/1.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/2.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/3.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/4.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+	
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/5.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/6.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/7.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/8.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/9.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+		
+		<div class="box">
+			<div class="info">
+				<div class="pic"><img src="static/images/10.jpg"></div>
+				<div class="title"><a href="#">This is a title.</a></div>
+			</div>
+		</div>
+	
+	</div>
